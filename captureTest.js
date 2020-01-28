@@ -3,7 +3,10 @@ let capture;
 function setup() {
   createCanvas(640, 480);
   capture = createCapture(VIDEO);
+  canvas.style('z-index','-1');
+  canvas.position(0,0);
 }
+
 function draw() {
   background(0);
   if (capture.loadedmetadata) {
