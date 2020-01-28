@@ -1,16 +1,6 @@
 html, body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: green;
+
 }
 canvas {
-  display: block;
-}
-
-button{
-  background-color: green;
-  width: 300px;
-  border: none;
 
 }
