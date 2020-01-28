@@ -4,7 +4,7 @@ function setup() {
   createCanvas(800, 800);
   capture = createCapture(VIDEO);
   //canvas.style('z-index','-1');
-  canvas.position(windowWidth,windowHeight);
+  canvas.position(0,0);
   imageMode(CENTER);
 
 }
