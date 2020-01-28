@@ -1,7 +1,7 @@
 let capture;
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(640, 640);
   capture = createCapture(VIDEO);
   canvas.style('z-index','-1');
   canvas.position(0,0);
