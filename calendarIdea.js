@@ -3,6 +3,8 @@ let canvasY;
 let counter;
 let rectWidth = 50;
 let rectYPos = 0;
+let lineVerX = 550;
+let lineHorY = 159;
 //let calHead1;
 //let calHead2;
 //let calHead3;
@@ -32,9 +34,13 @@ function setup(){
   counter = 0;
 
   //draws calendar outline
-  fill(0);
   strokeWeight(3);
-  line(550,0,550,height);
+  fill(0);
+  for(let i=0; i<8; i++){
+    line(lineVerX,0,lineVerX,height);
+    lineVerX+=100;
+  }
+  console.log("finished drawing");
 }
 
 function draw(){
