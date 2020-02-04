@@ -1,7 +1,7 @@
 let canvasX;
 let canvasY;
-let counter;
-let rectWidth = 50;
+let counter = 0;
+let rectWidth = 300;
 let rectYPos = 0;
 let lineVerX = 550;
 let lineHorY = 159;
@@ -10,6 +10,7 @@ let lineHorY = 159;
 //let calHead3;
 //let currentCalHead;
 let testImg;
+let gameStat=false;
 
 function preload(){ //loads image before any js runs
   //calHead1 = loadImage('images/morning.png');
@@ -31,7 +32,11 @@ function setup(){
   //calHead2.hide();
   //calHead3.hide();
 
-  counter = 0;
+  //counter setup
+  stroke(255,0,0);
+  noFill();
+  rect(100,189,rectWidth,40);
+
 
   //draws calendar outline
   strokeWeight(3);
@@ -52,7 +57,7 @@ function setup(){
   strokeWeight(1);
   fill(110);
   for(let k=0; k<20; k++){
-    line(posListX[k],lineHorY,width,lineHorY);
+    line(posXList[k],lineHorY,width,lineHorY);
     posYList.push(lineHorY);
     lineHorY+=30;
   }
@@ -61,36 +66,42 @@ function setup(){
   let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   textSize(25);
   for(let j=0;j<7;j++){
-    text(days[j],posList[j]+10,100);
+    text(days[j],posXList[j]+10,100);
   }
   console.log("finished drawing");
 }
 
 function draw(){
 
-  if(counter == 10){
-    console.log("Reached the max");
+  if(gameStat){
+    if(counter == 10){
+      console.log("Reached the max");
+    }
+    else{
+      if(frameCount%60 == 0 && rectWidth < 300){
+
+        //this "erases" the previous lines/rectangles made
+        stroke(255);
+        fill(255);
+        rect(10,10,rectWidth,20); //bar
+        rect(300,rectYPos,100,2); //line
+
+        counter++;
+
+        //reset to a visible stroke/fill and "move" items
+        noStroke();
+        fill(255,0,0);
+        rectWidth+=10;
+        rect(10,10,rectWidth,20);
+        rectYPos+=10;
+        rect(300,rectYPos,100,2);
+      };
+    }
   }
   else{
-    if(frameCount%60 == 0 && rectWidth < 300){
 
-      //this "erases" the previous lines/rectangles made
-      stroke(255);
-      fill(255);
-      rect(10,10,rectWidth,20); //bar
-      rect(300,rectYPos,100,2); //line
-
-      counter++;
-
-      //reset to a visible stroke/fill and "move" items
-      noStroke();
-      fill(255,0,0);
-      rectWidth+=10;
-      rect(10,10,rectWidth,20);
-      rectYPos+=10;
-      rect(300,rectYPos,100,2);
-    };
   }
+
 }
 
 /*
