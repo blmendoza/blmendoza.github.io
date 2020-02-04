@@ -8,7 +8,7 @@ let barXPos = 202;
 let barYPos = 253; //will add +50 for hunger/money bars
 let tiredWidth = 10;
 let hungerWidth = 10;
-let moneyWidth;
+let moneyWidth = 298;
 let counter = 0;
 
 //moving tracker
@@ -31,13 +31,13 @@ let posYList = []; //saving positiosn for 'time' header placements, horizontal l
 let testImg;
 let gameStat=false;
 
-
+/*
 function preload(){ //loads image before any js runs
   //calHead1 = loadImage('images/morning.png');
   //calHead2 = loadImage('images/afternoon.png');
   //calHead3 = loadImage('images/evening.png');
   testImg = loadImage('images/morning.png');
-}
+}*/
 
 function setup(){
   let canvas = createCanvas(windowWidth-25,windowHeight-25);
@@ -46,7 +46,7 @@ function setup(){
   canvas.position(canvasX, canvasY);
 
   background(255);
-  image(testImg,0,0);
+  //image(testImg,0,0);
   //currentCalHead = calHead1;
   //changeCalHead(calHead1);
   //calHead2.hide();
@@ -63,6 +63,9 @@ function setup(){
   rect(200,300,rectWidth+2,40); //for hunger counter
   text('Money',0,textPos+100);
   rect(200,350,rectWidth+2,40); //for money counter
+  noStroke(); //draw inside of money bar
+  fill(255,0,0);
+  rect(barXPos,barYPos+100,moneyWidth,34);
 
 
   //draws calendar outline
@@ -180,17 +183,74 @@ function keyPressed(){
   if(keyCode==32){
     gameStat = true;
   }
-}
+  if(keyCode==83){ //'s' for sleep/nap
+    //this "erases" the previous bar made for tiredness
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos,tiredWidth,34);
 
-function mousePressed(){
-  //"erases" old bar
-  stroke(255);
-  fill(255);
-  rect(10,10,rectWidth,20);
+    //reset to a visible stroke/fill and "move" bar forward for tiredness
+    noStroke();
+    fill(255,0,0);
+    tiredWidth-=5;
+    rect(barXPos,barYPos,tiredWidth,34);
+  }
+  if(keyCode==69){ //'e' for eat
+    //this "erases" the previous bar made for hunger
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos+50,hungerWidth,34);
 
-  //redraw new bar
-  rectWidth = 10;
-  noStroke();
-  fill(255,0,0);
-  rect(10,10,rectWidth,20);
+    //reset to a visible stroke/fill and "move" bar forward for hunger
+    noStroke();
+    fill(255,0,0);
+    hungerWidth-=15;
+    rect(barXPos,barYPos+50,hungerWidth,34);
+
+    //this "erases" the previous bar made for money
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos+100,moneyWidth,34);
+
+    //reset to a visible stroke/fill and "move" bar forward for money
+    noStroke();
+    fill(255,0,0);
+    moneyWidth-=1;
+    rect(barXPos,barYPos+100,moneyWidth,34);
+  }
+  if(keyCode==67){ //'c' for coffee
+    //this "erases" the previous bar made for tiredness
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos,tiredWidth,34);
+
+    //reset to a visible stroke/fill and "move" bar forward for tiredness
+    noStroke();
+    fill(255,0,0);
+    tiredWidth-=5;
+    rect(barXPos,barYPos,tiredWidth,34);
+
+    //this "erases" the previous bar made for money
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos+100,moneyWidth,34);
+
+    //reset to a visible stroke/fill and "move" bar forward for money
+    noStroke();
+    fill(255,0,0);
+    moneyWidth-=1;
+    rect(barXPos,barYPos+100,moneyWidth,34);
+  }
+  if(keyCode==87){ //'w' for work
+    //this "erases" the previous bar made for money
+    stroke(255);
+    fill(255);
+    rect(barXPos,barYPos+100,moneyWidth,34);
+
+    //reset to a visible stroke/fill and "move" bar forward for money
+    noStroke();
+    fill(255,0,0);
+    moneyWidth+=1;
+    rect(barXPos,barYPos+100,moneyWidth,34);
+  }
 }
