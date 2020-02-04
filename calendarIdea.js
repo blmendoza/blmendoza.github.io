@@ -36,9 +36,21 @@ function setup(){
   //draws calendar outline
   strokeWeight(3);
   fill(0);
+  line(lineVerX,0,lineVerX,height);
+  let posList = [];
+  strokeWeight(2);
+  fill(125);
   for(let i=0; i<8; i++){
-    line(lineVerX,0,lineVerX,height);
     lineVerX+=100;
+    line(lineVerX,0,lineVerX,height);
+    posList.push(lineVerX);
+  }
+
+  //add day headings
+  let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  textSize(32);
+  for(let j=0;j<7;j++){
+    text(days[j],posList[j]+10,100);
   }
   console.log("finished drawing");
 }
