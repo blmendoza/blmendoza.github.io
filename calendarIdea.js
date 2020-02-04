@@ -38,11 +38,11 @@ function setup(){
   fill(0);
   line(lineVerX,0,lineVerX,height);
   let posList = [];
-  strokeWeight(2);
+  strokeWeight(1.5);
   fill(125);
   for(let i=0; i<8; i++){
-    lineVerX+=100;
-    line(lineVerX,0,lineVerX,height);
+    lineVerX+=150;
+    line(lineVerX,159,lineVerX,height);
     posList.push(lineVerX);
   }
 
