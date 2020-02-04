@@ -41,9 +41,10 @@ function setup(){
   let posXList = []; //saving positions for 'day' header placements
   strokeWeight(1.5);
   fill(125);
+  lineVerX+=50;
   for(let i=0; i<8; i++){
-    lineVerX+=200;
     line(lineVerX,159,lineVerX,height);
+    lineVerX+=200;
     posXList.push(lineVerX);
   }
 
@@ -58,7 +59,7 @@ function setup(){
 
   //add day headings
   let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  textSize(32);
+  textSize(25);
   for(let j=0;j<7;j++){
     text(days[j],posList[j]+10,100);
   }
