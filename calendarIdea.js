@@ -1,10 +1,21 @@
 let canvasX;
 let canvasY;
-let counter = 0;
+
+//counter bar
+let rectHeight = 34;
 let rectWidth = 300;
+let barXPos = 202;
+let barYPos = 252;
+let counter = 0;
+
+//moving line
 let rectYPos = 0;
+
+//calender build
 let lineVerX = 550;
 let lineHorY = 159;
+
+
 //let calHead1;
 //let calHead2;
 //let calHead3;
@@ -35,18 +46,18 @@ function setup(){
   //counter setup
   stroke(255,0,0);
   noFill();
-  rect(100,189,rectWidth,40);
+  rect(200,250,rectWidth+2,40);
 
 
   //draws calendar outline
+  stroke(0);
   strokeWeight(3);
-  fill(0);
   line(lineVerX,0,lineVerX,height); //separator line
 
   let posXList = []; //saving positions for 'day' header placements
   strokeWeight(1.5);
-  fill(125);
-  lineVerX+=50;
+  stroke(128,128,128);
+  lineVerX+=100;
   for(let i=0; i<8; i++){
     line(lineVerX,159,lineVerX,height);
     lineVerX+=200;
@@ -55,7 +66,7 @@ function setup(){
 
   let posYList = []; //saving positiosn for 'time' header placements
   strokeWeight(1);
-  fill(110);
+  stroke(192,192,192);
   for(let k=0; k<20; k++){
     line(posXList[k],lineHorY,width,lineHorY);
     posYList.push(lineHorY);
@@ -69,6 +80,10 @@ function setup(){
     text(days[j],posXList[j]+10,100);
   }
   console.log("finished drawing");
+
+  //add time headings
+  let times = ['5AM','6AM','7AM','8AM','9AM','10AM','11AM','12PM','1PM','2PM','3PM','4PM','5PM','6PM','7PM','8PM','9PM','10PM','11PM','12AM'];
+
 }
 
 function draw(){
