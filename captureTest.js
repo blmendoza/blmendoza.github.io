@@ -1,18 +1,15 @@
 let capture;
+let blurVal = 0;
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(480, 480);
   capture = createCapture(VIDEO);
-  //canvas.style('z-index','-1');
-  canvas.position(0,0);
-  imageMode(CENTER);
-
+  capture.hide();
 }
 
 function draw() {
-  background(0);
-  if (capture.loadedmetadata) {
-    let c = capture.get(0, 0, 100, 100);
-    image(c, 0, 0);
-  }
+  image(capture, 0, 0, width, width * capture.height / capture.width);
+  filter(BLUR,blurVal);
+
+  if()
 }
