@@ -32,6 +32,8 @@ function setup(){
   counter = 0;
 
   //draws calendar outline
+  fill(0);
+  strokeWeight(3);
   line(550,0,550,height);
 }
 
