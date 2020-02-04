@@ -36,14 +36,24 @@ function setup(){
   //draws calendar outline
   strokeWeight(3);
   fill(0);
-  line(lineVerX,0,lineVerX,height);
-  let posList = [];
+  line(lineVerX,0,lineVerX,height); //separator line
+
+  let posXList = []; //saving positions for 'day' header placements
   strokeWeight(1.5);
   fill(125);
   for(let i=0; i<8; i++){
-    lineVerX+=150;
+    lineVerX+=200;
     line(lineVerX,159,lineVerX,height);
-    posList.push(lineVerX);
+    posXList.push(lineVerX);
+  }
+
+  let posYList = []; //saving positiosn for 'time' header placements
+  strokeWeight(1);
+  fill(110);
+  for(let k=0; k<20; k++){
+    line(posListX[k],lineHorY,width,lineHorY);
+    posYList.push(lineHorY);
+    lineHorY+=30;
   }
 
   //add day headings
