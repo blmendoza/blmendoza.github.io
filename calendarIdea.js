@@ -32,6 +32,7 @@ function setup(){
   counter = 0;
 
   //draws calendar outline
+  line(550,0,550,height);
 }
 
 function draw(){
