@@ -1,5 +1,6 @@
 let canvasX;
 let canvasY;
+let instructions;
 
 //counter bar
 let rectHeight = 34;
@@ -31,13 +32,13 @@ let posYList = []; //saving positiosn for 'time' header placements, horizontal l
 let testImg;
 let gameStat=false;
 
-
+/*
 function preload(){ //loads image before any js runs
   //calHead1 = loadImage('images/morning.png');
   //calHead2 = loadImage('images/afternoon.png');
   //calHead3 = loadImage('images/evening.png');
   testImg = loadImage('images/morning.png');
-}
+}*/
 
 function setup(){
   let canvas = createCanvas(windowWidth-25,windowHeight-25);
@@ -46,11 +47,13 @@ function setup(){
   canvas.position(canvasX, canvasY);
 
   background(255);
-  image(testImg,0,0);
+  //image(testImg,0,0);
   //currentCalHead = calHead1;
   //changeCalHead(calHead1);
   //calHead2.hide();
   //calHead3.hide();
+  textSize(18);
+  instructions = text('Press the "space" key to begin the game.\n\nPress "s" to sleep or nap\n(tiredness bar will decrease)\n\nPress "e" to eat and curb your hunger\n(hunger bar will decrease, money bar will decrease)\n\nPress "c" to buy and drink coffee\n(tiredness bar will decrease considerably, money bar will decrease)\n\nPress "w" to work\n(money bar will increase slightly)',0,420,500,height);
 
   //counter setup
   stroke(255,0,0);
@@ -103,6 +106,34 @@ function setup(){
   for(let l=0;l<times.length;l++){
     text(times[l],(posXList[0]-50),(posYList[l]+5));
   }
+
+  //add class blocks
+  let blockWidth = 142;
+  let hourWidth = 25;
+
+  stroke(232, 219, 32);
+  fill(232, 219, 32);
+  for(let i=0;i<5;i++){ //everyday classes
+    rect(posXList[i]+4,posYList[8]+12,blockWidth,hourWidth);
+  }
+  for(let i=0;i<5;i+=2){ // M/W/Fri classes
+    rect(posXList[i]+4,posYList[10]+12,blockWidth,hourWidth);
+    rect(posXList[i]+4,posYList[13]+12,blockWidth,hourWidth);
+  }
+  for(let i=1;i<4;i+=2){ // T/Thur classes
+    rect(posXList[i]+4,posYList[13]+12,blockWidth,hourWidth);
+  }
+  rect(posXList[1]+4,posYList[17]+12,blockWidth,hourWidth+12);
+
+  //add work blocks
+  stroke(130, 224, 152);
+  fill(130, 224, 152);
+  for(let i=0;i<5;i++){ //everyday work
+    rect(posXList[i]+4,posYList[15]+2,blockWidth,hourWidth*2-4);
+  }
+  for(let i=1;i<4;i+=2){ // T/Thur work
+    rect(posXList[i]+4,posYList[10]+2,blockWidth,hourWidth*3-4);
+  }
 }
 
 function draw(){
@@ -117,7 +148,7 @@ function draw(){
       //reset to a visible stroke/fill and "move" bar forward for tiredness
       noStroke();
       fill(255,0,0);
-      tiredWidth+=10;
+      tiredWidth+=5;
       rect(barXPos,barYPos,tiredWidth,34);
 
       //this "erases" the previous bar made for hunger
@@ -128,7 +159,7 @@ function draw(){
       //reset to a visible stroke/fill and "move" bar forward for hunger
       noStroke();
       fill(255,0,0);
-      hungerWidth+=10;
+      hungerWidth+=5;
       rect(barXPos,barYPos+50,hungerWidth,34);
 
       //draw tracker
@@ -151,6 +182,11 @@ function draw(){
       stroke(255,0,0);
       fill(255,0,0);
       let tracker = rect(trackerXPos,trackerYPos+1,146,2); //line
+      if(trackerYPos >= posYList[22]){
+        let dayIndex = days.findIndex(findDayIndex);
+        currentDay = days[dayIndex+1];
+        console.log(currentDay);
+      }
 
       //past tracker erasing
       stroke(255);
@@ -165,11 +201,13 @@ function draw(){
     }
     else{
       if(tiredWidth >= 300){
+        //instructions.hide();
         textSize(50);
         text('You passed out from exhaustion, game over.',0,500,500,height);
         gameStat = false;
       }
       else if(hungerWidth >= 300){
+        //instructions.hide();
         textSize(50);
         text('You passed out from hunger, game over.',0,500,500,height);
         gameStat = false;
@@ -214,7 +252,7 @@ function keyPressed(){
     //reset to a visible stroke/fill and "move" bar forward for money
     noStroke();
     fill(255,0,0);
-    moneyWidth-=1;
+    moneyWidth-=3;
     rect(barXPos,barYPos+100,moneyWidth,34);
   }
   if(keyCode==67){ //'c' for coffee
@@ -237,7 +275,7 @@ function keyPressed(){
     //reset to a visible stroke/fill and "move" bar forward for money
     noStroke();
     fill(255,0,0);
-    moneyWidth-=1;
+    moneyWidth-=3;
     rect(barXPos,barYPos+100,moneyWidth,34);
   }
   if(keyCode==87){ //'w' for work
@@ -252,4 +290,8 @@ function keyPressed(){
     moneyWidth+=1;
     rect(barXPos,barYPos+100,moneyWidth,34);
   }
+}
+
+function findDayIndex(day){
+  return day == currentDay;
 }
