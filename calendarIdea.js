@@ -32,13 +32,13 @@ let posYList = []; //saving positiosn for 'time' header placements, horizontal l
 let testImg;
 let gameStat=false;
 
-/*
+
 function preload(){ //loads image before any js runs
   //calHead1 = loadImage('images/morning.png');
   //calHead2 = loadImage('images/afternoon.png');
   //calHead3 = loadImage('images/evening.png');
   testImg = loadImage('images/morning.png');
-}*/
+}
 
 function setup(){
   let canvas = createCanvas(windowWidth-25,windowHeight-25);
@@ -47,7 +47,7 @@ function setup(){
   canvas.position(canvasX, canvasY);
 
   background(255);
-  //image(testImg,0,0);
+  image(testImg,0,0);
   //currentCalHead = calHead1;
   //changeCalHead(calHead1);
   //calHead2.hide();
