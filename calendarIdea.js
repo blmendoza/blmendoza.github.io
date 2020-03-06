@@ -17,6 +17,7 @@ let days = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
 let currentDay = days[0];
 let trackerXPos;
 let trackerYPos = 100;
+let checker = false;
 
 //calender build
 let lineVerX = 550;
@@ -32,13 +33,13 @@ let posYList = []; //saving positiosn for 'time' header placements, horizontal l
 let testImg;
 let gameStat=false;
 
-
+/*
 function preload(){ //loads image before any js runs
   //calHead1 = loadImage('images/morning.png');
   //calHead2 = loadImage('images/afternoon.png');
   //calHead3 = loadImage('images/evening.png');
   testImg = loadImage('images/morning.png');
-}
+}*/
 
 function setup(){
   let canvas = createCanvas(windowWidth-25,windowHeight-25);
@@ -47,7 +48,7 @@ function setup(){
   canvas.position(canvasX, canvasY);
 
   background(255);
-  image(testImg,0,0);
+  //image(testImg,0,0);
   //currentCalHead = calHead1;
   //changeCalHead(calHead1);
   //calHead2.hide();
@@ -164,27 +165,50 @@ function draw(){
 
       //draw tracker
       let buffer = 2;
-      if(currentDay == 'Monday'){
-        trackerXPos = posXList[0]+buffer;
-      }
-      else if(currentDay == 'Tuesday') {
-        trackerXPos = posXList[1]+buffer;
-      }
-      else if(currentDay == 'Wednesday') {
-        trackerXPos = posXList[2]+buffer;
-      }
-      else if(currentDay == 'Thursday'){
-        trackerXPos = posXList[3]+buffer;
-      }
-      else if(currentDay == 'Friday'){
-        trackerXPos = posXList[4]+buffer;
-      }
       stroke(255,0,0);
       fill(255,0,0);
       let tracker = rect(trackerXPos,trackerYPos+1,146,2); //line
+      //check if we should switch to next day
       if(trackerYPos >= posYList[22]){
+        checker = true;
         let dayIndex = days.findIndex(findDayIndex);
         currentDay = days[dayIndex+1];
+        if(currentDay == 'Monday'){
+          console.log('inside Monday tracker');
+          if(checker){
+            trackerXPos = posXList[0]+buffer;
+            trackerYPos = 100;
+            checker = false;
+          }
+        }
+        else if(currentDay == 'Tuesday') {
+          if(checker){
+            trackerXPos = posXList[1]+buffer;
+            trackerYPos = 100;
+            checker = false;
+          }
+        }
+        else if(currentDay == 'Wednesday') {
+          if(checker){
+            trackerXPos = posXList[2]+buffer;
+            trackerYPos = 100;
+            checker = false;
+          }
+        }
+        else if(currentDay == 'Thursday'){
+          if(checker){
+            trackerXPos = posXList[3]+buffer;
+            trackerYPos = 100;
+            checker = false;
+          }
+        }
+        else if(currentDay == 'Friday'){
+          if(checker){
+            trackerXPos = posXList[4]+buffer;
+            trackerYPos = 100;
+            checker = false;
+          }
+        }
         console.log(currentDay);
       }
 
