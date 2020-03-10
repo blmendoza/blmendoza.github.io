@@ -1,0 +1,414 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+
+    <!-- teleport controls library -->
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="skyTexture" src="images/starmap.jpg">
+
+        <!-- room 1 -->
+        <a-asset-item id="bed-obj" src="models/bed/model.obj"></a-asset-item>
+        <a-asset-item id="bed-mtl" src="models/bed/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="plants-obj" src="models/plantGroup/model.obj"></a-asset-item>
+        <a-asset-item id="plants-mtl" src="models/plantGroup/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="abra-obj" src="models/abra/model.obj"></a-asset-item>
+        <a-asset-item id="abra-mtl" src="models/abra/materials.mtl"></a-asset-item>
+
+        <video id="city" autoplay loop="true" src="video/citynight_Trim.mp4"></video>
+
+        <a-asset-item id="curtains1-obj" src="models/curtains1/curtains.obj"></a-asset-item>
+        <a-asset-item id="curtains1-mtl" src="models/curtains1/curtains.mtl"></a-asset-item>
+
+        <!-- room 2 -->
+        <a-asset-item id="tv-obj" src="models/tv/model.obj"></a-asset-item>
+        <a-asset-item id="tv-mtl" src="models/tv/materials.mtl"></a-asset-item>
+
+        <video id="digimonIntro" autoplay loop="true" src="video/digimonIntro.mp4"></video>
+
+        <a-asset-item id="cubone-obj" src="models/cubone/model.obj"></a-asset-item>
+        <a-asset-item id="cubone-mtl" src="models/cubone/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="haunter-obj" src="models/haunter/model.obj"></a-asset-item>
+        <a-asset-item id="haunter-mtl" src="models/haunter/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="mew-obj" src="models/mew/model.obj"></a-asset-item>
+        <a-asset-item id="mew-mtl" src="models/mew/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="couch-obj" src="models/couch/model.obj"></a-asset-item>
+        <a-asset-item id="couch-mtl" src="models/couch/materials.mtl"></a-asset-item>
+
+        <!-- room 3 -->
+        <a-asset-item id="plant-obj" src="models/singlePlant/model.obj"></a-asset-item>
+        <a-asset-item id="plant-mtl" src="models/singlePlant/materials.mtl"></a-asset-item>
+
+        <video id="nature" autoplay loop="true" src="video/nature.mp4"></video>
+
+        <a-asset-item id="bulb-obj" src="models/bulbasaur/model.obj"></a-asset-item>
+        <a-asset-item id="bulb-mtl" src="models/bulbasaur/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="odd-obj" src="models/oddish/model.obj"></a-asset-item>
+        <a-asset-item id="odd-mtl" src="models/oddish/materials.mtl"></a-asset-item>
+
+        <!-- room 4 -->
+        <a-asset-item id="boombox-obj" src="models/boombox/model.obj"></a-asset-item>
+        <a-asset-item id="boombox-mtl" src="models/boombox/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="table-obj" src="models/table/model.obj"></a-asset-item>
+        <a-asset-item id="table-mtl" src="models/table/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="char-obj" src="models/charmander/model.obj"></a-asset-item>
+        <a-asset-item id="char-mtl" src="models/charmander/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="jigg-obj" src="models/jigglypuff/model.obj"></a-asset-item>
+        <a-asset-item id="jigg-mtl" src="models/jigglypuff/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="mag-obj" src="models/magikarp/model.obj"></a-asset-item>
+        <a-asset-item id="mag-mtl" src="models/magikarp/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="pika-obj" src="models/pikachu/model.obj"></a-asset-item>
+        <a-asset-item id="pika-mtl" src="models/pikachu/materials.mtl"></a-asset-item>
+
+        <img id="dance" src="images/dance.jpg">
+      </a-assets>
+
+
+      <a-entity id="cameraRig" wasd-controls movement-controls>
+        <a-entity camera look-controls position="0.3 0.9 0.9"></a-entity>
+      </a-entity>
+
+      <a-sky src="#skyTexture"></a-sky>
+
+<!-- room1 -->
+      <a-plane
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="6"
+        height="6"
+        color="#4d001f"
+        src="images/woodfloor.jpg">
+      </a-plane>
+
+      <a-plane
+        position="3 1.5 0"
+        rotation="0 90 0"
+        width="6"
+        height="3"
+        color="#ff0066">
+      </a-plane>
+
+      <a-plane
+        position="-3 1.5 0"
+        rotation="0 90 0"
+        width="6"
+        height="3"
+        color="#ff0066">
+      </a-plane>
+
+      <a-video
+        src="#city"
+        width="6"
+        height="3"
+        position="0 1.5 -3">
+      </a-video>
+
+      <a-text
+        value="Hello! Start traveling through the wall on the left to visit my friends."
+        color="#ffffb3"
+        position="0 2.5 -2"
+        align="center">
+      </a-text>
+
+
+      <a-entity obj-model="obj: #curtains1-obj; mtl: #curtains1-mtl"
+        position="0 -0.4 -2.9"
+        rotation="0 90 0"
+        scale="0.4 0.4 0.65">
+      </a-entity>
+
+      <a-entity obj-model="obj: #bed-obj; mtl: #bed-mtl"
+        position="-0.5 0.2 -0.1"
+        rotation="1 110 0"
+        scale="2 2 2">
+      </a-entity>
+
+      <a-entity obj-model="obj: #plants-obj; mtl: #plants-mtl"
+        position="0.8 0.3 -1"
+        rotation="0 20 0"
+        scale="0.7 0.7 0.7">
+      </a-entity>
+
+
+      <a-entity obj-model="obj: #abra-obj; mtl: #abra-mtl"
+        position="-0.5 1 -0.1"
+        rotation="0 195 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -0.5 0.8 -0.1;
+          dur: 1500;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+<!-- room 2 -->
+      <a-plane
+        position="-6 0 0"
+        rotation="-90 0 0"
+        width="6"
+        height="6"
+        color="#8a8a5c"
+        src="images/woodfloor.jpg">
+      </a-plane>
+
+      <a-plane
+        position="-9 1.5 0"
+        rotation="0 90 0"
+        width="6"
+        height="3"
+        color="#ff0066">
+      </a-plane>
+
+      <a-entity obj-model="obj: #tv-obj; mtl: #tv-mtl"
+        position="-6 1.5 -2"
+        rotation="0 270 0"
+        scale="2 2 2">
+      </a-entity>
+
+      <a-video
+        src="#digimonIntro"
+        width="3"
+        height="2"
+        position="-6.32 1.8 -1.65">
+      </a-video>
+
+      <a-sound
+        src="video/digimonIntroSound.mp3"
+        autoplay="true"
+        loop = "true"
+        volume="0.15"
+        position="-6.32 1.8 -1.65">
+      </a-sound>
+
+      <a-entity obj-model="obj: #cubone-obj; mtl: #cubone-mtl"
+        position="-6.3 0.8 0"
+        rotation="0 0 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -6.3 1.8 0;
+          dur: 400;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #haunter-obj; mtl: #haunter-mtl"
+        position="-7.5 1 0"
+        rotation="0 0 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -7.5 1.5 0;
+          dur: 400;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #mew-obj; mtl: #mew-mtl"
+        position="-5.1 0.8 0"
+        rotation="0 0 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -5.1 1.8 0;
+          dur: 400;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #couch-obj; mtl: #couch-mtl"
+        position="-6.3 0.2 2"
+        rotation="0 0 0"
+        scale="2 2 2">
+      </a-entity>
+
+<!-- room 3 -->
+      <a-plane
+        position="-12 0 0"
+        rotation="-90 0 0"
+        width="6"
+        height="6"
+        color="#009900"
+        src="images/woodfloor.jpg">
+      </a-plane>
+
+      <a-plane
+        position="-15 1.5 0"
+        rotation="0 90 0"
+        width="6"
+        height="3"
+        color="#ff0066">
+      </a-plane>
+
+      <a-video
+        src="#nature"
+        width="6"
+        height="3"
+        position="-12 1.5 -3">
+      </a-video>
+
+      <a-sound
+        src="video/natureSound.mp3"
+        autoplay="true"
+        loop = "true"
+        volume="0.2"
+        position="-12 1.5 -3">
+      </a-sound>
+
+      <a-entity obj-model="obj: #plant-obj; mtl: #plant-mtl"
+        position="-12 1 0"
+        rotation="0 0 0"
+        scale="1 1 1">
+      </a-entity>
+
+      <a-entity obj-model="obj: #bulb-obj; mtl: #bulb-mtl"
+        position="-13.5 0.3 0"
+        rotation="0 180 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -13.7 0.3 0;
+          dur: 600;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #odd-obj; mtl: #odd-mtl"
+        position="-10.5 0.8 0"
+        rotation="0 180 0"
+        scale="2 2 2"
+        animation="property:position;
+          to: -10 0.8 0;
+          dur: 300;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+<!-- room 4 -->
+      <a-plane
+        position="-18 0 0"
+        rotation="-90 0 0"
+        width="6"
+        height="6"
+        color="#ff80b3"
+        src="images/woodfloor.jpg">
+      </a-plane>
+
+      <a-plane
+        position="-21 1.5 0"
+        rotation="0 90 0"
+        width="6"
+        height="3"
+        color="#ff0066">
+      </a-plane>
+
+      <a-image
+        src="#dance"
+        height="3"
+        width="6"
+        position="-18 1.5 -3">
+      </a-image>
+
+      <a-entity obj-model="obj: #boombox-obj; mtl: #boombox-mtl"
+        position="-20 1.7 -1.8"
+        rotation="0 210 0"
+        scale="1.5 1.5 1.5">
+      </a-entity>
+
+      <a-sound
+        src="video/digirap.mp3"
+        autoplay="true"
+        loop = "true"
+        volume="0.05"
+        position="-20 1.7 -1.8">
+      </a-sound>
+
+      <a-entity obj-model="obj: #table-obj; mtl: #table-mtl"
+        position="-20 0.5 -2"
+        rotation="0 0 0"
+        scale="5 5 5">
+      </a-entity>
+
+      <a-entity obj-model="obj: #char-obj; mtl: #char-mtl"
+        position="-20 0.4 0"
+        rotation="0 0 0"
+        scale="1.5 1.5 1.5"
+        animation="property:rotation;
+          to: 0 360 0;
+          dur: 1000;
+          loop: true;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #jigg-obj; mtl: #jigg-mtl"
+        position="-16 0.7 -1.5"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property:rotation;
+          to: 0 360 0;
+          dur: 1100;
+          loop: true;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #mag-obj; mtl: #mag-mtl"
+        position="-17 0.3 1.5"
+        rotation="0 180 0"
+        scale="1.5 1.5 1.5"
+        animation="property:position;
+          to: -17 1 1.5;
+          dur: 300;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+      <a-entity obj-model="obj: #pika-obj; mtl: #pika-mtl"
+        position="-18 1 0"
+        rotation="0 0 0"
+        scale="1.5 1.5 1.5"
+        animation="property:rotation;
+          to: 0 180 0;
+          dur: 600;
+          loop: true;
+          dir: alternate;
+          easing: linear;">
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
