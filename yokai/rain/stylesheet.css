@@ -1,0 +1,31 @@
+body {
+  background: url('../img/wood.jpg');
+}
+
+#kasaPic {
+  margin-left: 135px;
+}
+
+.row {
+  margin:0;
+  padding:0;
+}
+
+#homeDiv {
+  background: white;
+  border-radius: 25px;
+}
+
+#homeIcon, #nextIcon, #prevIcon {
+  padding-left: 35px;
+}
+
+#prevDiv {
+  background: #850529;
+  border-radius: 25px;
+}
+
+#nextDiv {
+  background: #27e024;
+  border-radius: 25px;
+}

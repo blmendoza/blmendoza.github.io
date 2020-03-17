@@ -1,0 +1,22 @@
+body {
+  background: url('../img/darktatami.jpg');
+}
+
+.row {
+  margin:0;
+  padding:0;
+}
+
+#homeDiv {
+  background: white;
+  border-radius: 25px;
+}
+
+#homeIcon, #nextIcon {
+  padding-left: 35px;
+}
+
+#nextDiv {
+  background: #27e024;
+  border-radius: 25px;
+}

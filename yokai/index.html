@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Homepage for DigiYo">
+    <meta name="author" content="Briana Mendoza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Righteous|Tajawal&display=swap" rel="stylesheet">
+    <title>DigiYō • デジ妖</title>
+  </head>
+
+
+  <body>
+    <div id="header" class="container-fluid row">
+      <h1 id="mainTitle" style="z-index, -1">DigiYō</h1>
+      <div class="col carousel slide" data-ride="carousel" data-interval="7500">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="carImg" src="img/nukaribe.jpg" alt="Nukaribe yokai">
+            <div class="carousel-caption">
+              <h4>Nurikabe (ぬりかべ) from "Bakemono no e" (化物之繪, c. 1700)</h4>
+              <p>Yōkai whose name translates to "plaster wall", manifests as an invisible wall that halts or misdirects travelers walking at night</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="carImg" src="img/futakuchionna.jpg" alt="Futakuchi Onna yokai">
+            <div class="carousel-caption">
+              <h4>Futakuchi onna (二口女) from "yokai.com"</h4>
+              <p>Yōkai whose name translates to "two-mouthed woman", normal-passing woman who has a second mouth in the back of her skull whose ravenous nature consumes any food it can find.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="carImg" src="img/yokaiwatch.jpg" alt="Yokai Watch">
+            <div class="carousel-caption">
+              <h4>"Yokai Watch (妖怪ウォッチ)" anime</h4>
+              <p>Theme of befriending various yokai haunting the city.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="carImg" src="img/hanakosan.jpg" alt="地縛少年花子くん, Toilet-Bound Hanako-kun anime adaptation based off of the Hanako yokai">
+            <div class="carousel-caption">
+              <h4>Toilet-Bound Hanako-kun (地縛少年花子くん, Jibaku Shōnen Hanako-kun)</h4>
+              <p>A twist on the traditional Hanako-san yokai (Toire no Hanako-san), a Japanese urban legend about the spirit of a young girl named Hanako-san who haunts school bathrooms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="textSections" class="container-fluid row">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active tabColor" data-toggle="pill" href="#purposeDiv" onClick="document.getElementById('purposeDiv').scrollIntoView()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tabColor" data-toggle="pill" href="#yokaiDiv" onClick="document.getElementById('yokaiDiv').scrollIntoView()">Yōkai?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tabColor" data-toggle="pill" href="#enterDiv" onClick="document.getElementById('enterDiv').scrollIntoView()">Enter DigiYō</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content">
+      <div id="purposeDiv" class="tab-pane active container-fluid row">
+        <h1 class="sectionHeadings">About the Project</h1>
+        <p class="paragraphTexts">I started to create this project "DigiYō" to educate others about Japanese yōkai through interactive encounters in a digital space. I chose this theme of yōkai because of the bizarre quality of specificity of a unique entity yet unspecificity of origin. It's interesting to me how one yōkai can have various interpretations and forms to fit different narratives.</p>
+      </div>
+
+      <div id="yokaiDiv" class="tab-pane fade container-fluid row">
+        <h1 class="sectionHeadings">What Are Yōkai?</h1>
+        <p class="paragraphTexts">Yōkai (妖怪) refer to spirits, monsters, and other supernatural creatures from Japanese folklore. The oldest record of yōkai could be seen as early as 8th century within Japan's creation myths. Yōkai saw a surge of popularity during the Edo period (1603-1868) when culture and art were flourishing. Similar to the creation myths, yōkai in the Edo period were used to help explain strange phenomenon from all over the country.</p><br>
+        <p class="paragraphTexts">Yōkai can possess animal features, human-like features, appear as inanimate objects, or have no discernible shape at all. Most usually have spiritual or supernatural abilities, with shapeshifting being the most common. Heavily influenced by the concept of animism (the belief that objects, places and creatures all possess a distinct spiritual essence and thus have some degree of agency, along with emotions and personalities), yōkai can be considered peaceful, bringers of good fortune, bringers of ill-fortune, or violent.</p><br>
+        <p class="paragraphTexts">A great resource for reading more: <a href="http://yokai.com/">http://yokai.com/</a></p>
+      </div>
+
+      <div id="enterDiv" class="tab-pane fade container-fluid row">
+        <h1 class="sectionHeadings">DigiYō 101</h1>
+        <p class="paragraphTexts">This project so far has two pages that will introduce you to various yōkai. You can navigate between the two through navigators at the top of the page. Click the button below to begin.</p>
+        <a href="eyes/index.html" class="btn btn-success" role="button">Enter!</a>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yokai project">
+    <meta name="author" content="Briana Mendoza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokumokuren • 目目連</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="../js/p5.js"></script>
+    <script src="../js/p5.sound.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container mt-3">
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+        Who are these yōkai?
+      </button>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Mokumokuren (目目連), "Eyes Everywhere"</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <img src="../img/mokumokuren.jpg" width="450px" height=250px;><br><br>
+              <p>The eerie feeling of being watched led to the creation of the Mokumokuren yōkai in Toriyama Sekien's 1781 work "Konjaku hyakki shūi". The original depiction of this yōkai shows many eyes embedded in a ripped and ragged shoji screen (Japanese paper sliding walls) of an abandoned house, though they could also be found in tatami floor mats and in walls. The only way to remove the spirit from the wall is to patch up the holes in it.</p><br>
+              <p>Folkloric stories were added by later artists. One provided by Yamada Norio and Mizuki Shigeru: A traveling lumber merchant from Edo spends the night in an abandoned house since he has nowhere else to stay. When the Mokumokuren yōkai makes its appearance, the man is not afraid; on the contrary, he approaches the eyes and plucks them out one-by-one and places them in his bag. He then continues to sell the collected Mokumokuren eyes to an eye doctor in Edo. In another folkloric story, a traveler purposefully stayed in a house where a Mokumokuren yōkai resided and tried to ignore it while sleeping by wrapping his head with a blanket; the next morning the man had found that his eyes had been removed and couldn't be found.</p><br>
+              <p>Persistance of this yōkai's concept can be seen with hyper-awareness of surveillance in modern-day society.</p>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/eyes.js"></script>
+
+    <div class="row">
+      <div id="homeDiv" class="col-sm-1">
+        <a href="../index.html"><img id="homeIcon" src="../img/home.svg"></a>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4"></div>
+      <div class="col-sm-1"></div>
+      <div id="nextDiv" class="col-sm-1">
+        <a href="../rain/index.html"><img id="nextIcon" src="../img/arrow_forward.svg"></a>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </body>
+
+</html>
