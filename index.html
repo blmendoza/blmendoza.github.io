@@ -1,12 +1,62 @@
-<!DOCTYPE html><html><head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio website for Briana Mendoza">
+    <meta name="author" content="Briana Mendoza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Geo|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Pacifico|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+    <title>Briana's Space</title>
   </head>
+
+
   <body>
-    <script src="calendarIdea.js"></script>
+    <div class="container-fluid">
+      <h1 id="landingHeading">Welcome</h1>
 
+      <ul class="landingList">
+        <li>
+          <a href="#" title="About Briana Mendoza:" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Current 4th year at UChicago majoring in East Asian Languages and Civilizations and minoring in Media Arts and Design. Welcome to my portfolio site!"><img src="img/icon/face-24px.svg" alt="face icon" class="landingIcons"></a>
+          <a href="about/index.html" class="newPage about">Briana</a>
+        </li>
+        <li>
+          <a href="#" title="Schedule Simulator" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="A project made for my Embodied Data and Gamified Interfaces class using P5.js."><img src="img/icon/date_range-24px.svg" alt="calendar icon" class="landingIcons"></a>
+          <a href="schedSim/index.html" class="newPage schedSim">Schedule Simulator</a>
+        </li>
+        <li>
+          <a href="#" title="ElectroRoad" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="A project made for my Human Computer Interaction class using Arduino C code and EMS sensors"><img src="img/icon/explore-24px.svg" alt="compass icon" class="landingIcons">
+          </a><a href="eRoad/index.html" class="newPage electro">ElectroRoad</a>
+        </li>
+        <li>
+          <a href="#" title="DigiYō" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="A project made for my Media Arts and Design minor capstone class, made with P5.js."><img src="img/icon/whatshot-24px.svg" alt="flame icon" class="landingIcons"></a>
+          <a href="yokai/index.html" class="newPage digiyo">DigiYō</a>
+        <li>
+          <a href="#" title="Portfolio Page" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Click here to see more of my work!"><img src="img/icon/folder-24px.svg" alt="folder icon" class="landingIcons">
+          </a><a href="portfolio/index.html" class="newPage portfolio">Portfolio Page</a>
+        </li>
+      </ul>
+    </div>
 
-</body></html>
+    <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+    </script>
+
+  </body>
+
+</html>

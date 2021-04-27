@@ -1,0 +1,99 @@
+body {
+  background-color: #c2c2d6;
+  background-image: url("img/coloredrain.jpg");
+  background-size: cover;
+}
+
+.container-fluid {
+  width:auto;
+  background-color: rgb(225,225,225,0.3);
+  margin: 60px;
+  padding: 20px;
+  border: 2px solid yellow;
+  animation: borderAnimation 2s infinite;
+  animation-direction:alternate-reverse;
+}
+
+@keyframes borderAnimation {
+  0% {border-color:yellow;}
+  25% {border-color:green;}
+  50% {border-color:blue;}
+  75% {border-color:purple;}
+  100% {border-color:red;}
+}
+
+#landingHeading {
+  text-align: center;
+  font-family: 'Geo', sans-serif;
+  text-shadow: 10px #ffff;
+  margin: 100px 0px 50px 0px;
+  animation: headingAnimation 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes headingAnimation {
+  0% {color:red; font-size: 200px;}
+  100% {color:yellow; font-size: 250px;}
+}
+
+.landingList {
+  color: #f6eef5;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Ubuntu', sans-serif;
+  list-style-type: none;
+  margin: 0px 10px 100px 10px;
+}
+
+li {
+  float: left;
+  padding: 0px 35px 100px 10px;
+}
+
+.landingIcons {
+  width: 50px;
+  height: 50px;
+}
+
+a:link {
+  color:red;
+}
+
+a:visited {
+  color:red;
+}
+
+
+a.newPage:hover {
+  color:#002fc9;
+  background-color: yellow;
+  cursor:help;
+}
+
+a.about:hover {
+  font-family: 'Lobster', sans-serif;
+}
+
+a.schedSim:hover{
+  font-family: 'Indie Flower', sans-serif;
+}
+
+a.electro:hover{
+  font-family: 'Pacifico', sans-serif;
+}
+
+a.digiyo:hover{
+  font-family: 'Lemonada', cursive;
+}
+
+a.portfolio:hover{
+  font-family: 'Shadows Into Light', sans-serif;
+}
+
+a:active {
+  color:#00ba19;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
