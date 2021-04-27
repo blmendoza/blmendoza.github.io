@@ -27,8 +27,8 @@ body {
   font-family: 'Geo', sans-serif;
   text-shadow: 10px #ffff;
   margin: 100px 0px 50px 0px;
-  animation: headingAnimation 2s infinite;
-  animation-direction: alternate-reverse;
+  /*animation: headingAnimation 2s infinite;
+  animation-direction: alternate-reverse;*/
 }
 
 @keyframes headingAnimation {
