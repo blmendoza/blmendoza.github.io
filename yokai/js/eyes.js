@@ -10,9 +10,9 @@ let wood;
 let bandaid;
 
 function preload() {
-  tatami = loadImage('../img/wood.jpg');
-  wood = loadImage('../img/darkwood.jpg');
-  bandaid = loadImage('../img/bandaid.png');
+  tatami = loadImage('../../img/wood.jpg');
+  wood = loadImage('../../img/darkwood.jpg');
+  bandaid = loadImage('../../img/bandaid.png');
 }
 
 

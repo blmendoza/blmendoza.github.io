@@ -1,0 +1,93 @@
+body {
+  background-color: #c2c2d6;
+  background-image: url("../img/coloredrain.jpg");
+  background-size: cover;
+}
+
+.container-fluid {
+  width:auto;
+  background-color: rgb(225,225,225,0.47);
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #007ec2;
+}
+
+.navbar-nav{
+  font-size: 45px;
+  font-family: 'Geo', sans-serif;
+}
+
+li {
+  padding: 0px 10px 0px 10px;
+}
+
+#current {
+  background: yellow;
+}
+
+#box1 {
+  width: 100px;
+  height: 10px;
+  top:5px;
+  position: relative;
+  animation: mymove 1s infinite;
+  animation-direction: alternate;
+}
+
+#box2 {
+  width: 100px;
+  height: 10px;
+  top:10px;
+  position: relative;
+  animation: mymove 1s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes mymove {
+  0% {left:0%; background:#FE0002;}
+  100% {left:90%; background:#0302FC;}
+}
+
+.col-sm-1 {
+  background: rgb(0,0,0,0.5);
+}
+
+#box3 {
+  width: 100px;
+  height: 5px;
+  position: relative;
+  animation: mymove2 2s infinite;
+  background: yellow;
+}
+
+@keyframes mymove2 {
+  0% {left:20%; width:0px;}
+  50% {left:20%; width:100px;}
+  100% {left:70%; width:0px}
+}
+
+h2, h3, p {
+  text-align: center;
+}
+
+#japanese {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+p {
+  font-family: 'Shadows Into Light', sans-serif;
+  font-size: 35px;
+}
+
+#webInfo {
+  color: yellow;
+  animation: breath 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes breath {
+  0% {font-size: 30px; background:#5badeb;}
+  100% {font-size: 32px; background:#db8896;}
+}

@@ -1,0 +1,105 @@
+body {
+  background-color: #c2c2d6;
+  background-image: url("../img/coloredrain.jpg");
+  background-size: cover;
+}
+
+.container-fluid {
+  width:auto;
+  background-color: rgb(225,225,225,0.47);
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #007ec2;
+}
+
+.navbar-nav{
+  font-size: 45px;
+  font-family: 'Geo', sans-serif;
+}
+
+li {
+  padding: 0px 10px 0px 10px;
+}
+
+#current {
+  background: yellow;
+}
+
+.col-sm-1 {
+  background: rgb(0,0,0,0.5);
+}
+
+.tabColor {
+  background: white;
+  border: 3px double blue;
+}
+
+.active {
+  animation: changeBorder 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes changeBorder {
+  0% {border-color: white;}
+  100% {border-color: red;}
+}
+
+iframe {
+  align:right;
+  border:1px solid orange;
+}
+
+#originStory {
+  background: orange;
+}
+
+#originHeader {
+  background: rgb(255,0,0,0.2);
+  color: black;
+}
+
+h1, dl {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+dt {
+  font-size: 24px;
+}
+
+#photos {
+  background: #0239a8;
+}
+
+#photosHeader {
+  background: #031e57;
+  color: white;
+}
+
+.cPhotos {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Indie Flower', sans-serif;
+}
+
+#projectPhotos {
+  padding: 10px 30px;
+}
+
+#projPhotosIndicators {
+  background: red;
+}
+
+.projPhotosLR {
+  background: red;
+  width:8%;
+}
+
+.myWorkClass {
+  background: (255,255,255,0.5);
+}

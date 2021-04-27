@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio website for Briana Mendoza">
+    <meta name="author" content="Briana Mendoza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briana's Space</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Geo|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Pacifico|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+
+  </head>
+
+
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../">
+          <img src="../img/icon/home-24px.svg" alt="home logo" style="width:40px; height:40px">
+        </a>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../about/index.html">Who Am I?</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="#" onclick="alert('You\'re already here, silly!')" id="current">Schedule Simulator</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../eRoad/index.html">ElectroRoad</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../portfolio/index.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+    </div><br><br>
+
+    <div class="container-fluid" id="pageContent">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8">
+          <h2>A game to waste time about not having enough time.</h2>
+          <p>'Schedule Simulator' was created for the 'Embodied Data and Gamified Interfaces' course I took Winter Quarter 2020. I was heavily inspired by my obsession of recording appointments/classes on Google calendar combined with my frantic panic at how easily I con myself into over-filling my schedule.</p>
+          <p id="disclaimer">Disclaimer: it's still in the works! I recommend playing this on a computer!</p>
+          <button id="game">Open Game</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content" id="sketch-holder">
+        <span class="close">&times;</span>
+        <!-- Our sketch will go here! -->
+        <script src="calendarIdea.js"></script>
+      </div>
+    </div>
+
+  </body>
+
+</html>

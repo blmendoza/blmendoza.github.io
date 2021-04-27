@@ -1,0 +1,58 @@
+body {
+  background-color: #c2c2d6;
+  background-image: url("../img/coloredrain.jpg");
+  background-size: cover;
+}
+
+.container-fluid {
+  width:auto;
+  background-color: rgb(225,225,225,0.47);
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #007ec2;
+}
+
+.navbar-nav{
+  font-size: 45px;
+  font-family: 'Geo', sans-serif;
+}
+
+li {
+  padding: 0px 10px 0px 10px;
+}
+
+#current {
+  background: yellow;
+}
+
+.col-sm-1 {
+  background: rgb(0,0,0,0.5);
+}
+
+#comeBack {
+  text-align: center;
+  font-size: 150px;
+  animation: comeBackAnimation 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes comeBackAnimation {
+  0% {color:red; font-family:'Indie Flower', sans-serif; }
+  25% {color:orange; font-family: 'Lobster', sans-serif;}
+  50% {color:green; font-family: 'Pacifico',sans-serif;}
+  75% {color:blue; font-family: 'Shadows Into Light', sans-serif;}
+  100% {color: purple; font-family: 'Ubuntu', sans-serif;}
+}
+
+#later {
+  text-align: center;
+  animation: laterAnimation 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes laterAnimation {
+  0% {font-size: 40px;}
+  100% {font-size: 100px}
+}

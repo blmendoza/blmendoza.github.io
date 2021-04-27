@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio website for Briana Mendoza">
+    <meta name="author" content="Briana Mendoza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briana's Space</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Geo|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Pacifico|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../">
+          <img src="../img/icon/home-24px.svg" alt="home logo" style="width:40px; height:40px">
+        </a>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../about/index.html">Who Am I?</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../schedSim/index.html">Schedule Simulator</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="#" onclick="alert('You\'re already here, silly!')" id="current">ElectroRoad</a>
+          </li>
+          <li class="nav-item">.</li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="../portfolio/index.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+    </div><br><br>
+
+    <div class="container-fluid" id="pageContent">
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-8">
+
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active tabColor" data-toggle="pill" href="#demo">Demo Video</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tabColor" data-toggle="pill" href="#howItWorks">How It Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tabColor" data-toggle="pill" href="#myWork">My Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tabColor" data-toggle="pill" href="#song">Bonus Material</a>
+            </li>
+          </ul><br>
+
+          <div class="tab-content">
+            <div class="tab-pane container active" id="demo">
+              <iframe width=100% height="538" src="https://www.youtube.com/embed/HUdoGUiqjcY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="tab-pane container fade" id="howItWorks">
+              <div id="originStory"><br>
+                <h1 id="originHeader">Project origin story:</h1>
+                <dl>
+                  <dt>Our Idea</dt>
+                  <dd>- Intuitive way of giving directions</dd>
+                  <dd>- Aiding those with visual impairments</dd>
+                  <dt>Existing Work</dt>
+                  <dd>- EMS video trackers</dd>
+                  <dd>- Instructional value of EMS (drumming, singing)</dd>
+                  <dt>Our Device</dt>
+                  <dd>- Using EMS, points your hand to the cardinal direction you need to go in next in order to arrive at the Reg.</dd>
+              </div>
+
+              <div id="photos"><br>
+                <h1 id="photosHeader">Project photos:</h1><br>
+                <div id="projectPhotos" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators" id="projPhotosIndicators">
+                    <li data-target="#projectPhotos" data-slide-to="0" class="active"></li>
+                    <li data-target="#projectPhotos" data-slide-to="1"></li>
+                    <li data-target="#projectPhotos" data-slide-to="2"></li>
+                    <li data-target="#projectPhotos" data-slide-to="3"></li>
+                    <li data-target="#projectPhotos" data-slide-to="4"></li>
+                  </ul>
+
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="../img/hardwareSensorsInput.png" alt="Dabble app interface" class="cPhotos">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/hardwareSensorsInput2.png" alt="HC-06 Bluetooth Receiver and tactile switch" class="cPhotos">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/hardwareSensorsOutput.png" alt="EMS device and electrode set" class="cPhotos">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/hardwareSensorsOutput2.png" alt="Relays" class="cPhotos">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../img/pinouts.png" alt="diagram of pinouts for circuitry" class="cPhotos">
+                    </div>
+                  </div>
+
+                  <!-- Left and right controls -->
+                  <a class="carousel-control-prev projPhotosLR" href="#projectPhotos" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next projPhotosLR" href="#projectPhotos" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane container fade" id="myWork">
+              <div id="myWorkCar" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#projectPhotos" data-slide-to="0" class="active"></li>
+                  <li data-target="#projectPhotos" data-slide-to="1"></li>
+                  <li data-target="#projectPhotos" data-slide-to="2"></li>
+                  <li data-target="#projectPhotos" data-slide-to="3"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../img/design1.png" alt="Harness, bracelet, and holder preview" class="cPhotos">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/design2.png" alt="harness detail" class="cPhotos">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/design3.png" alt="bracelet detail" class="cPhotos">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../img/design4.png" alt="holder for circuitry" class="cPhotos">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev myWorkClass" href="#myWorkCar" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next myWorkClass" href="#myWorkCar" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+
+            <div class="tab-pane container fade" id="song">
+              <img src="../img/song.png" alt="ElectroRoad Theme Song" class="cPhotos">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

@@ -23,10 +23,10 @@ let rainList = [];
 let emergeTimeList = [];
 
 function preload() {
-  rainDrop = loadImage("../img/raindrop.png");
-  bkgd = loadImage("../img/tokyoStreets.jpg");
-  kasaOpen = loadImage("../img/kasabakeOpened.png");
-  kasaClose = loadImage("../img/kasabakeClosed.png");
+  rainDrop = loadImage("../../img/raindrop.png");
+  bkgd = loadImage("../../img/tokyoStreets.jpg");
+  kasaOpen = loadImage("../../img/kasabakeOpened.png");
+  kasaClose = loadImage("../../img/kasabakeClosed.png");
   classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/6yZbTe9O/model.json');
 }
 
