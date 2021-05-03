@@ -4,24 +4,27 @@ body {
   background-size: cover;
 }
 
+/* Container for "Welcome" message and related animation */
 .container-fluid {
   width:auto;
   background-color: rgb(225,225,225,0.3);
   margin: 60px;
-  padding: 20px;
+  /*padding: 20px;*/
   border: 2px solid yellow;
   animation: borderAnimation 2s infinite;
   animation-direction:alternate-reverse;
 }
 
 @keyframes borderAnimation {
-  0% {border-color:yellow;}
+  0% {border-color:yellow; padding-bottom: 30px;}
   25% {border-color:green;}
   50% {border-color:blue;}
   75% {border-color:purple;}
-  100% {border-color:red;}
+  100% {border-color:red; padding-bottom: 20px}
 }
 
+
+/* "Welcome" message and related animation */
 #landingHeading {
   text-align: center;
   font-family: 'Geo', sans-serif;
@@ -32,10 +35,12 @@ body {
 }
 
 @keyframes headingAnimation {
-  0% {color:red; font-size: 200px;}
-  100% {color:yellow; font-size: 210px;}
+  0% {color:red; font-size: 200px; margin-bottom: 50px;}
+  100% {color:yellow; font-size: 210px; margin-bottom: 40px;}
 }
 
+
+/* homepage menu items */
 .landingList {
   color: #f6eef5;
   text-align: center;

@@ -1,2 +1,2 @@
 # blmendoza.github.io
-Welcome to my personal website!
+A big welcome to you, my friend, who has stumbled upon my portfolio website. I welcome you to check back periodically as I update this space with chronicles of my unconventional journey into STEM. While I hope you find interest in the documented projects, keep in mind that this website itself is an experiment into web development as I cobble together various features I find strewn across the internet.
